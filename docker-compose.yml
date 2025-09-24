@@ -1,0 +1,26 @@
+services:
+  jupyterhub:
+    build: .
+    container_name: jupyterhub
+    restart: unless-stopped
+    ports:
+      - "80:8000"
+      - "8081:8081"
+    volumes:
+      - ./jupyterhub_config.py:/srv/jupyterhub/jupyterhub_config.py
+      - jupyterhub-data:/srv/jupyterhub
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - jupyterhub_network
+
+  user-notebook:
+    image: jupyter/scipy-notebook:latest
+    networks:
+      - jupyterhub_network
+
+volumes:
+  jupyterhub-data:
+
+networks:
+  jupyterhub_network:
+    driver: bridge
