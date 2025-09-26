@@ -20,6 +20,7 @@ c.DockerSpawner.volumes = {
     '/dsk8/transfer/dsk1/www/archive/pds3': '/home/jovyan/work/pds.sbn/pds3',
     '/pds4': '/home/jovyan/work/pds.sbn/pds4',
     '/dsk8/catalina/gbo.ast.catalina.survey/': '/home/jovyan/work/pds.sbn/catalina',
+    '/srv/search-api-notebook': '/home/jovyan/work/search-api-notebook'
 }
 
 # optional: remove containers once they stop
