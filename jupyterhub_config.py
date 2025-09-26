@@ -16,7 +16,7 @@ c.DockerSpawner.notebook_dir = "/home/jovyan/work"
 
 # mount a volume for each user
 c.DockerSpawner.volumes = {
-        'jupyterhub-user-{username}': '/home/jovyan/work'
+    'jupyterhub-user-{username}': '/home/jovyan/work'
 }
 
 # optional: remove containers once they stop
