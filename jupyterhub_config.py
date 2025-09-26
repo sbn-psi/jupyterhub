@@ -29,9 +29,9 @@ c.Spawner.debug = True
 c.JupyterHub.bind_url = 'http://:8000'
 
 # authentication (simple for testing)
-c.JupyterHub.authenticator_class = 'pam'
-# c.DummyAuthenticator.password = 'dummy'
-c.Authenticator.allowed_users = {'conor'}
+c.JupyterHub.authenticator_class = 'dummy'
+c.DummyAuthenticator.password = 'dummy123'
+c.Authenticator.allowed_users = {'conor', 'jstone', 'mdrum', 'epalmer'}
 
 # LDAP configuration
 # c.LDAPAuthenticator.debug = True
