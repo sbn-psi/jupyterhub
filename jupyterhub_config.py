@@ -1,4 +1,6 @@
 # jupyterhub_config.py
+import os
+import shutil
 
 c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
 
@@ -20,7 +22,8 @@ c.DockerSpawner.volumes = {
     '/dsk8/transfer/dsk1/www/archive/pds3': '/home/jovyan/work/pds.sbn/pds3',
     '/pds4': '/home/jovyan/work/pds.sbn/pds4',
     '/dsk8/catalina/gbo.ast.catalina.survey/': '/home/jovyan/work/pds.sbn/catalina',
-    '/srv/search-api-notebook': '/home/jovyan/work/search-api-notebook'
+    '/srv/search-api-notebook': '/home/jovyan/work/search-api-notebook',
+    '/srv/files/Welcome_to_PDS_SBN.ipynb': '/home/jovyan/work/Welcome.ipynb'
 }
 
 # optional: remove containers once they stop
