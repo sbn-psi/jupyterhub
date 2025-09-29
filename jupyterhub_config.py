@@ -39,16 +39,3 @@ c.JupyterHub.bind_url = 'http://:8000'
 c.JupyterHub.authenticator_class = 'dummy'
 c.DummyAuthenticator.password = 'dummy123'
 c.Authenticator.allowed_users = {'conor', 'jstone', 'mdrum', 'epalmer'}
-
-# LDAP configuration
-# c.LDAPAuthenticator.debug = True
-# c.JupyterHub.authenticator_class = 'ldap'
-# c.LDAPAuthenticator.server_address = "sbn-dc-1.psi.edu"
-
-# c.LDAPAuthenticator.lookup_dn = True
-# c.LDAPAuthenticator.lookup_dn_search_filter = '({login_attr}={login})'
-# c.LDAPAuthenticator.lookup_dn_search_user = 'cn=ldap_search_user_technical_account,'
-# c.LDAPAuthenticator.lookup_dn_search_password = 'secret'
-# c.LDAPAuthenticator.user_search_base = 'ou=SBNPSI,dc=sbnpsi,dc=local'
-# c.LDAPAuthenticator.user_attribute = 'sAMAccountName'
-# c.LDAPAuthenticator.lookup_dn_user_dn_attribute = 'cn'
