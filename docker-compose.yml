@@ -11,6 +11,7 @@ services:
       - jupyterhub-data:/srv/jupyterhub
       - /var/run/docker.sock:/var/run/docker.sock
       - ./.env:/srv/jupyterhub/.env
+      - ./files/Welcome_to_PDS_SBN.ipynb:/srv/jupyterhub/files/Welcome_to_PDS_SBN.ipynb
     networks:
       - jupyterhub_network
 
