@@ -1,3 +1,3 @@
 FROM jupyterhub/jupyterhub:latest
 
-RUN pip install dockerspawner jupyterhub-ldapauthenticator
+RUN pip install dockerspawner oauthenticator python-dotenv

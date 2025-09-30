@@ -1,6 +1,10 @@
 # jupyterhub_config.py
 import os
 import shutil
+from oauthenticator.google import GoogleOAuthenticator
+from dotenv import load_dotenv
+
+load_dotenv()
 
 c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
 
@@ -35,7 +39,12 @@ c.Spawner.debug = True
 # jupyterhub listens on all interfaces
 c.JupyterHub.bind_url = 'http://:8000'
 
-# authentication (simple for testing)
-c.JupyterHub.authenticator_class = 'dummy'
-c.DummyAuthenticator.password = 'dummy123'
-c.Authenticator.allowed_users = {'conor', 'jstone', 'mdrum', 'epalmer'}
+# Google OAuth
+c.JupyterHub.authenticator_class = GoogleOAuthenticator
+c.GoogleOAuthenticator.client_id = os.getenv("GOOGLE_CLIENT_ID")
+c.GoogleOAuthenticator.client_secret = os.getenv("GOOGLE_CLIENT_SECRET")
+c.GoogleOAuthenticator.oauth_callback_url = "https://jupyterhub.psi.edu/hub/oauth_callback"
+c.GoogleOAuthenticator.hosted_domain = ["psi.edu"]
+c.GoogleOAuthenticator.login_service = "Google"
+c.GoogleOAuthenticator.admin_users = {"ckingston"}
+c.GoogleOAuthenticator.allowed_users = {"ckingston"}
