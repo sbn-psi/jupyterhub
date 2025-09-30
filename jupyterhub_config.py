@@ -27,7 +27,7 @@ c.DockerSpawner.volumes = {
     '/pds4': '/home/jovyan/work/pds.sbn/pds4',
     '/dsk8/catalina/gbo.ast.catalina.survey/': '/home/jovyan/work/pds.sbn/catalina',
     '/srv/search-api-notebook': '/home/jovyan/work/search-api-notebook',
-    '/srv/files/Welcome_to_PDS_SBN.ipynb': '/home/jovyan/work/Welcome.ipynb'
+    '/srv/jupyterhub/files/Welcome_to_PDS_SBN.ipynb': '/home/jovyan/work/Welcome_file.ipynb'
 }
 
 # optional: remove containers once they stop
