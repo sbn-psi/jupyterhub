@@ -47,4 +47,4 @@ c.GoogleOAuthenticator.oauth_callback_url = "https://jupyterhub.psi.edu/hub/oaut
 c.GoogleOAuthenticator.hosted_domain = ["psi.edu"]
 c.GoogleOAuthenticator.login_service = "Google"
 c.GoogleOAuthenticator.admin_users = {"ckingston"}
-c.GoogleOAuthenticator.allowed_users = {"ckingston"}
+c.GoogleOAuthenticator.allowed_users = {"ckingston","jstone","mdrum","epalmer","neese","mueller","klopez"}
