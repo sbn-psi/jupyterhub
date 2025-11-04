@@ -9,5 +9,4 @@ RUN pip install \
     pdr \
     pds.peppi \
     pds4-tools \
-    pywwt \
     spiceypy
