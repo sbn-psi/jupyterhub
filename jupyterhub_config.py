@@ -9,7 +9,7 @@ load_dotenv()
 c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
 
 # the docker image to spawn for each user
-c.DockerSpawner.image = "jupyter/scipy-notebook:latest"
+c.DockerSpawner.image = "sbnpsi/user-notebook:latest"
 
 # use the internal docker network
 c.DockerSpawner.network_name = "jupyterhub_jupyterhub_network"

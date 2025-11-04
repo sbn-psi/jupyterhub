@@ -1,7 +1,9 @@
 services:
   jupyterhub:
-    build: .
-    container_name: jupyterhub
+    build:
+      context: ./jupyterhub
+      dockerfile: Dockerfile
+    image: sbnpsi/jupyterhub:latest
     restart: unless-stopped
     ports:
       - "80:8000"
@@ -16,7 +18,10 @@ services:
       - jupyterhub_network
 
   user-notebook:
-    image: jupyter/scipy-notebook:latest
+    build:
+      context: ./user-notebook
+      dockerfile: Dockerfile
+    image: sbnpsi/user-notebook:latest
     networks:
       - jupyterhub_network
 
