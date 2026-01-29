@@ -39,6 +39,28 @@ c.Spawner.debug = True
 # jupyterhub listens on all interfaces
 c.JupyterHub.bind_url = 'http://:8000'
 
+def read_allow_list(path):
+    """
+    Read allow list file into a set of usernames/emails.
+    - Ignores blank lines and comments (# ...)
+    - Strips whitespace
+    """
+    users = set()
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            for line in f:
+                s = line.strip()
+                if not s or s.startswith("#"):
+                    continue
+                users.add(s)
+    except FileNotFoundError:
+        # Fail closed: no users if the file is missing
+        users = set()
+    return users
+
+ALLOW_LIST_PATH = os.getenv("JUPYTERHUB_ALLOW_LIST_FILE", "/srv/jupyterhub/allow_list.txt")
+allowed = read_allow_list(ALLOW_LIST_PATH)
+
 # Google OAuth
 c.JupyterHub.authenticator_class = GoogleOAuthenticator
 c.GoogleOAuthenticator.login_service = "Google"
@@ -46,7 +68,4 @@ c.GoogleOAuthenticator.client_id = os.getenv("GOOGLE_CLIENT_ID")
 c.GoogleOAuthenticator.client_secret = os.getenv("GOOGLE_CLIENT_SECRET")
 c.GoogleOAuthenticator.oauth_callback_url = "https://jupyterhub.psi.edu/hub/oauth_callback"
 c.GoogleOAuthenticator.admin_users = {"ckingston"}
-c.GoogleOAuthenticator.allowed_users = {
-    "ckingston@psi.edu","jstone@psi.edu","mdrum@psi.edu","epalmer@psi.edu",
-    "neese@psi.edu","mueller@psi.edu","klopez@psi.edu"
-}
+c.GoogleOAuthenticator.allowed_users = allowed

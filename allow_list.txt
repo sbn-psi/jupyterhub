@@ -1,0 +1,12 @@
+# PSI users
+ckingston@psi.edu
+jstone@psi.edu
+mdrum@psi.edu
+epalmer@psi.edu
+neese@psi.edu
+mueller@psi.edu
+klopez@psi.edu
+
+# External collaborators
+rseaman@arizona.edu
+fulsdavid@arizona.edu
