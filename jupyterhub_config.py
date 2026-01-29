@@ -41,10 +41,12 @@ c.JupyterHub.bind_url = 'http://:8000'
 
 # Google OAuth
 c.JupyterHub.authenticator_class = GoogleOAuthenticator
+c.GoogleOAuthenticator.login_service = "Google"
 c.GoogleOAuthenticator.client_id = os.getenv("GOOGLE_CLIENT_ID")
 c.GoogleOAuthenticator.client_secret = os.getenv("GOOGLE_CLIENT_SECRET")
 c.GoogleOAuthenticator.oauth_callback_url = "https://jupyterhub.psi.edu/hub/oauth_callback"
-c.GoogleOAuthenticator.hosted_domain = ["psi.edu"]
-c.GoogleOAuthenticator.login_service = "Google"
 c.GoogleOAuthenticator.admin_users = {"ckingston"}
-c.GoogleOAuthenticator.allowed_users = {"ckingston","jstone","mdrum","epalmer","neese","mueller","klopez"}
+c.GoogleOAuthenticator.allowed_users = {
+    "ckingston@psi.edu","jstone@psi.edu","mdrum@psi.edu","epalmer@psi.edu",
+    "neese@psi.edu","mueller@psi.edu","klopez@psi.edu"
+}
