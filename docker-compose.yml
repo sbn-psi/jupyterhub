@@ -14,7 +14,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./.env:/srv/jupyterhub/.env
       - ./files/Welcome_to_PDS_SBN.ipynb:/srv/jupyterhub/files/Welcome_to_PDS_SBN.ipynb
-      - /src/jupyterhub/allow_list.txt:/srv/jupyterhub/allow_list.txt:ro
+      - ./access_control:/srv/jupyterhub/access_control
     networks:
       - jupyterhub_network
 

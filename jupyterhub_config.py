@@ -65,7 +65,7 @@ def read_allow_list(path):
         users = set()
     return users
 
-ALLOW_LIST_PATH = os.getenv("JUPYTERHUB_ALLOW_LIST_FILE", "/srv/jupyterhub/allow_list.txt")
+ALLOW_LIST_PATH = os.getenv("JUPYTERHUB_ALLOW_LIST_FILE", "/srv/jupyterhub/access_control/allow_list.txt")
 allowed = read_allow_list(ALLOW_LIST_PATH)
 
 # Google OAuth
