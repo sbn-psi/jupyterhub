@@ -22,11 +22,18 @@ c.DockerSpawner.notebook_dir = "/home/jovyan/work"
 
 # mount a volume for each user
 c.DockerSpawner.volumes = {
-    'jupyterhub-user-{username}': '/home/jovyan/work',
+    # JupyterHub user data mount
+    '/jupyterhub-user-data/users/{username}': '/home/jovyan/work',
+
+    # PDS Archive Data
     '/dsk8/transfer/dsk1/www/archive/pds3': '/home/jovyan/work/pds.sbn/pds3',
     '/pds4': '/home/jovyan/work/pds.sbn/pds4',
     '/dsk8/catalina/gbo.ast.catalina.survey/': '/home/jovyan/work/pds.sbn/catalina',
+
+    # Demo notebook area
     '/srv/search-api-notebook': '/home/jovyan/work/search-api-notebook',
+
+    # Welcome file
     '/srv/jupyterhub/files/Welcome_to_PDS_SBN.ipynb': '/home/jovyan/work/Welcome_file.ipynb'
 }
 
