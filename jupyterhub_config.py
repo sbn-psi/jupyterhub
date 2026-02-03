@@ -33,8 +33,9 @@ c.DockerSpawner.volumes = {
     # Demo notebook area
     '/srv/search-api-notebook': '/home/jovyan/work/search-api-notebook',
 
-    # Welcome file
-    '/srv/jupyterhub/files/Welcome_to_PDS_SBN.ipynb': '/home/jovyan/work/Welcome_file.ipynb'
+    # Welcome files
+    '/srv/jupyterhub/files/Welcome_to_PDS_SBN.ipynb': '/home/jovyan/work/Welcome_file.ipynb',
+    '/srv/jupyterhub/files/CSS_Catalina_Sky_Survey_Demo.ipynb': '/home/jovyan/work/CSS_Survey_Demo.ipynb'
 }
 
 # optional: remove containers once they stop
