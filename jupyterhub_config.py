@@ -23,7 +23,7 @@ c.DockerSpawner.notebook_dir = "/home/jovyan/work"
 # mount a volume for each user
 c.DockerSpawner.volumes = {
     # JupyterHub user data mount
-    '/jupyterhub-user-data/users/{username}': '/home/jovyan/work',
+    '/srv/jupyterhub-user-data/users/{username}': '/home/jovyan/work',
 
     # PDS Archive Data
     '/dsk8/transfer/dsk1/www/archive/pds3': '/home/jovyan/work/pds.sbn/pds3',
@@ -39,6 +39,15 @@ c.DockerSpawner.volumes = {
 
 # optional: remove containers once they stop
 c.DockerSpawner.remove = False
+
+# --- RESOURCE CONTROLS: memory + CPU ---
+c.DockerSpawner.extra_host_config = {
+    "mem_limit": "4g",
+    "mem_reservation": "3g",
+    "memswap_limit": "4g",
+    "cpu_shares": 1024,
+    "pids_limit": 2048
+}
 
 # optional: debug logging
 c.Spawner.debug = True
