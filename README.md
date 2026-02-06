@@ -75,6 +75,7 @@ Run the Welcome notebook (Shift+Enter to run cells) to verify archive access and
 |----------|--------|
 | **Memory** | 4 GB |
 | **CPU** | Standard allocation (see subnode for details) |
+| **Storage** | 50 GB per user |
 
 *Additional resource details may be defined by the subnode and reflected in the environment.*
 
